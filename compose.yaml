@@ -1,0 +1,12 @@
+services:
+  campus-bites:
+    build: .
+    env_file: .env
+    ports:
+      - "${PORT:-3001}:3001"
+    volumes:
+      - campus_bites_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  campus_bites_data:
